@@ -1,8 +1,8 @@
 #!/bin/bash
 ##########################################################################################################################################################################################
-wget http://archlinuxarm.org/os/ArchLinuxARM-rpi-2-latest.tar.gz
-wget http://archlinuxarm.org/os/ArchLinuxARM-rpi-2-latest.tar.gz.md5
-wget http://archlinuxarm.org/os/ArchLinuxARM-rpi-2-latest.tar.gz.sig
+curl -LO http://archlinuxarm.org/os/ArchLinuxARM-rpi-2-latest.tar.gz
+curl -LO http://archlinuxarm.org/os/ArchLinuxARM-rpi-2-latest.tar.gz.md5
+curl -LO http://archlinuxarm.org/os/ArchLinuxARM-rpi-2-latest.tar.gz.sig
 ##########################################################################################################################################################################################
 sed -i 's/rootfs/latest/' ArchLinuxARM-rpi-2-latest.tar.gz.md5
 sed -i "s/`date '+%Y'`.`date '+%m'`-//" ArchLinuxARM-rpi-2-latest.tar.gz.md5

@@ -1,4 +1,11 @@
 #!/bin/env bash
-files=$(ls ./parts/rootfs.tar.gz*)
-if [[ ${files} ]];then git rm ./parts/rootfs.tar.gz*;fi
-tar -cz rootfs/ | split -b 50M - parts/rootfs.tar.gz_
+files=$(ls ./partfs/rootfs.tar.gz*)
+if [[ ${files} ]];then
+git rm ./partfs/rootfs.tar.gz*
+rm ./partfs/rootfs.tar.gz*
+fi
+tar -cz rootfs/ | split -b 50M - partfs/rootfs.tar.gz_
+
+#for i in `ls ./partfs/`;do
+#  gpg --homedir ../gnupg --output ${i}.sig --sign
+#done
