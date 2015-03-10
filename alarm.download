@@ -1,22 +1,3 @@
-#!/bin/bash
-
-wget http://archlinuxarm.org/os/ArchLinuxARM-rpi-2-latest.tar.gz
-wget http://archlinuxarm.org/os/ArchLinuxARM-rpi-2-latest.tar.gz.md5
-wget http://archlinuxarm.org/os/ArchLinuxARM-rpi-2-latest.tar.gz.sig
-
-sed -i 's/rootfs/latest/' ArchLinuxARM-rpi-2-latest.tar.gz.md5
-sed -i "s/`date '+%Y'`.`date '+%m'`-//" ArchLinuxARM-rpi-2-latest.tar.gz.md5
-
-echo "###############"
-md5sum -c ArchLinuxARM-rpi-2-latest.tar.gz.md5
-sleep 1
-echo "###############"
-gpg --keyserver pgp.mit.edu --recv-keys 2BDBE6A6
-gpg --verify ArchLinuxARM-rpi-2-latest.tar.gz.sig
-sleep 1
-echo "###############"
-
-mkdir rootfs
-tar -C ./rootfs -xf ArchLinuxARM-rpi-2-latest.tar.gz
-
+#!/bin/env bash
+cat rootfs.tar.gz* | tar -xz
 
