@@ -1,7 +1,4 @@
 #!/bin/env bash
-
-files=$(ls ./rootfs.tar.gz*)
-if [[ ${files} ]];then rm ./rootfs.tar.gz*;fi
-tar -cz rootfs/ | split -b 50M - rootfs.tar.gz_
-
-#cat wtf.coma* | tar -xz
+files=$(ls ./parts/rootfs.tar.gz*)
+if [[ ${files} ]];then git rm ./parts/rootfs.tar.gz*;fi
+tar -cz rootfs/ | split -b 50M - parts/rootfs.tar.gz_

@@ -1,5 +1,5 @@
 #!/bin/bash
-CHROOT="/mnt/stateful_partition/alarm/rootfs"
+CHROOT="./rootfs"
 umount ${CHROOT}/dev/pts
 umount ${CHROOT}/dev/shm
 umount ${CHROOT}/dev
