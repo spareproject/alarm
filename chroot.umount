@@ -1,0 +1,9 @@
+#!/bin/bash
+CHROOT="/mnt/stateful_partition/alarm/rootfs"
+umount ${CHROOT}/dev/pts
+umount ${CHROOT}/dev/shm
+umount ${CHROOT}/dev
+umount ${CHROOT}/sys
+umount ${CHROOT}/proc
+umount ${CHROOT}/run
+

@@ -1,0 +1,15 @@
+#!/bin/bash
+# stole this from somewhere years ago but dont really care about the chroot getting full access to /dev 
+CHROOT="/mnt/stateful_partition/alarm/rootfs/dev"
+mknod -m 666 ${CHROOT}/null c 1 3
+mknod -m 666 ${CHROOT}/zero c 1 5
+mknod -m 666 ${CHROOT}/random c 1 8
+mknod -m 666 ${CHROOT}/urandom c 1 9
+mkdir -m 755 ${CHROOT}/pts
+mkdir -m 1777 ${CHROOT}/shm
+mknod -m 666 ${CHROOT}/tty c 5 0
+mknod -m 600 ${CHROOT}/console c 5 1
+mknod -m 666 ${CHROOT}/tty0 c 4 0
+mknod -m 666 ${CHROOT}/full c 1 7
+mknod -m 600 ${CHROOT}/initctl p
+mknod -m 666 ${CHROOT}/ptmx c 5 2
