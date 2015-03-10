@@ -4,6 +4,7 @@ if [[ ${files} ]];then
 git rm ./partfs/rootfs.tar.gz*
 rm ./partfs/rootfs.tar.gz*
 fi
+mkdir partfs
 tar -cz rootfs/ | split -b 50M - partfs/rootfs.tar.gz_
 
 #for i in `ls ./partfs/`;do

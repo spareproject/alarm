@@ -1,4 +1,4 @@
 #!/bin/env bash
 for i in `ls ./partfs/`;do
-  gpg --homedir ../gnupg --output ./partfs/${i}.sig --sign ./partfs/${i}
+  gpg --homedir ../gnupg --output ./partfs/${i}.sig -- sign ./partfs/${i}
 done
